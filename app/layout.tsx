@@ -1,25 +1,29 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Kalam, Lato } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const lato = Lato({
+  variable: "--font-body",
+  weight: ["400", "900"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const kalam = Kalam({
+  variable: "--font-hand",
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Jing Chen",
-  description: "Designer and software engineer in Sydney, building accessible web apps.",
+  description:
+    "Designer and software engineer in Sydney, building accessible web apps.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${lato.variable} ${kalam.variable}`}>
       <body>{children}</body>
     </html>
   );

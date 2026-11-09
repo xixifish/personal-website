@@ -1,3 +1,32 @@
+:root {
+  /* Colors */
+  --color-text: #251803;
+  --color-brown: #603500;
+  --color-muted: #68645e;
+  --color-line: #e2dac5;
+  --color-paper: #efe8d8;
+
+  /* Sizes */
+  --text-name: 3.125rem;
+  --text-body: 1.125rem;
+  --text-label: 1rem;
+  --text-small: 0.875rem;
+  --column: 35rem; /* 560px */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
   font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: 1.33;
+  background-image: url("/paper.jpg");
+  background-size: 154px 154px;
+  background-color: var(--color-paper);
 }

@@ -1,0 +1,6 @@
+.divider {
+  display: flex;
+  justify-content: center;
+  color: var(--color-brown);
+  margin-block: var(--space-8);
+}

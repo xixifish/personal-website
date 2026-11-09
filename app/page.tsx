@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 import Image from "next/image";
+import { Divider } from "@/components/Divider";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
             engineering role, in design engineering, frontend or full-stack.
           </p>
         </div>
+        <Divider />
         <section className={styles.contact}>
           <h2>Get in touch:</h2>
           <dl>
@@ -52,6 +54,7 @@ export default function Home() {
           <p>* Full rights to work in AU and NZ. Open to both locations.</p>
           <a href="#">Download CV</a>
         </section>
+        <Divider />
         <section>
           <h2>Recently designed and built:</h2>
           <article>

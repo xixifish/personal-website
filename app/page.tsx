@@ -12,7 +12,7 @@ export default function Home() {
           height={80}
           className={styles.avatar}
         />
-        <h1>Jing Chen</h1>
+        <h1 className={styles.name}>Jing Chen</h1>
       </header>
       <main className={styles.main}>
         <div className={styles.intro}>

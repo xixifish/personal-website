@@ -1,13 +1,21 @@
 import styles from "./page.module.css";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <header>
+      <header className={styles.header}>
+        <Image
+          src="/avatar.jpg"
+          alt=""
+          width={80}
+          height={80}
+          className={styles.avatar}
+        />
         <h1>Jing Chen</h1>
       </header>
       <main className={styles.main}>
-        <div className="intro">
+        <div className={styles.intro}>
           <p>
             Welcome, I’m Jing, living in Sydney and finishing my Master of IT at
             UNSW soon. I used to work as a product designer for five years.
@@ -19,7 +27,7 @@ export default function Home() {
             engineering role, in design engineering, frontend or full-stack.
           </p>
         </div>
-        <section className="contact">
+        <section className={styles.contact}>
           <h2>Get in touch:</h2>
           <dl>
             <dt>Email</dt>

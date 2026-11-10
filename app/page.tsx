@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Image from "next/image";
 import { Divider } from "@/components/Divider";
+import { ContactCard } from "@/components/ContactCard";
 
 export default function Home() {
   return (
@@ -29,31 +30,9 @@ export default function Home() {
           </p>
         </div>
         <Divider />
-        <section className={styles.contact}>
-          <h2>Get in touch:</h2>
-          <dl>
-            <dt>Email</dt>
-            <dd>
-              <a href="mailto:jing.chen.dev@gmail.com">
-                jing.chen.dev@gmail.com
-              </a>
-            </dd>
 
-            <dt>LinkedIn</dt>
-            <dd>
-              <a href="https://www.linkedin.com/in/jingchen-dev">
-                linkedin.com/in/jingchen-dev
-              </a>
-            </dd>
+        <ContactCard />
 
-            <dt>GitHub</dt>
-            <dd>
-              <a href="https://github.com/xixifish">github.com/xixifish</a>
-            </dd>
-          </dl>
-          <p>* Full rights to work in AU and NZ. Open to both locations.</p>
-          <a href="#">Download CV</a>
-        </section>
         <Divider />
         <section>
           <h2>Recently designed and built:</h2>

@@ -49,10 +49,16 @@ body {
   font-family: var(--font-body);
   font-size: var(--text-body);
   color: var(--color-text);
-  line-height: 1.33;
+  line-height: 1.4;
   background-image: url("/paper.jpg");
   background-size: 154px 154px;
   background-color: var(--color-paper);
+}
+
+h2 {
+  font-size: var(--text-body);
+  font-weight: 400;
+  margin-bottom: var(--space-4);
 }
 
 .visually-hidden {

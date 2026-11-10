@@ -21,7 +21,7 @@ const CONTACTS = [
 export function ContactCard() {
   return (
     <section className={styles.contact}>
-      <h2 className={styles.heading}>Get in touch:</h2>
+      <h2>Get in touch:</h2>
       <div className={styles.card}>
         <dl className={styles.list}>
           {CONTACTS.map((contact) => (

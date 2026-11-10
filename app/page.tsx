@@ -43,8 +43,8 @@ export default function Home() {
           ))}
         </section>
       </main>
-      <footer>
-        <p>
+      <footer className={styles.footer}>
+        <p className={styles.footerText}>
           Busy updating this website. View the source on{" "}
           <a href="https://github.com/xixifish/personal-website">GitHub</a>. ©
           2026 Jing Chen

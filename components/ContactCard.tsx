@@ -37,8 +37,12 @@ export function ContactCard() {
           <p className={styles.note}>
             * Full rights to work in AU and NZ. Open to both locations.
           </p>
-          <a className={styles.downloadCV} href="#">
-            Download CV
+          <a
+            className={styles.downloadCV}
+            href="/jing-chen-cv.pdf"
+            target="_blank"
+          >
+            View Resume
           </a>
         </div>
       </div>

@@ -4,7 +4,7 @@ import styles from "./ProjectCard.module.css";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article>
+    <article className={styles.project}>
       <a href={project.liveUrl} className={styles.coverLink}>
         <Image
           src={project.cover.src}
@@ -15,9 +15,9 @@ export function ProjectCard({ project }: { project: Project }) {
           className={styles.cover}
         />
       </a>
-      <h3>{project.name}:</h3>
-      <p>{project.tagline}</p>
-      <ul>
+      <h3 className={styles.name}>{project.name}: </h3>
+      <p className={styles.tagline}>{project.tagline}</p>
+      <ul className={styles.links}>
         <li>
           <a href={project.liveUrl}>
             Try it

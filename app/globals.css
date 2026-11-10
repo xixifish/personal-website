@@ -5,6 +5,7 @@
   --color-muted: #68645e;
   --color-line: #e2dac5;
   --color-paper: #efe8d8;
+  --color-link-hover: #a36621;
 
   /* Sizes */
   --text-name: 3.125rem;
@@ -34,6 +35,14 @@
 a {
   color: var(--color-brown);
   font-family: var(--font-hand);
+  text-underline-offset: 0.2rem;
+  text-decoration-thickness: 1px;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-link-hover);
+  text-decoration-style: wavy;
 }
 
 body {

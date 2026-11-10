@@ -1,0 +1,19 @@
+.cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: grayscale(1);
+  transition: filter 0.3s;
+  border-radius: 1px;
+}
+
+.coverLink:hover .cover,
+.coverLink:focus-visible .cover {
+  filter: none;
+}
+
+@media (hover: none) {
+  .cover {
+    filter: none;
+  }
+}

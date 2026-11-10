@@ -2,6 +2,8 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import { Divider } from "@/components/Divider";
 import { ContactCard } from "@/components/ContactCard";
+import { PROJECTS } from "@/data/projects";
+import { ProjectCard } from "@/components/ProjectCard";
 
 export default function Home() {
   return (
@@ -36,60 +38,9 @@ export default function Home() {
         <Divider />
         <section>
           <h2>Recently designed and built:</h2>
-          <article>
-            <h3>Weekly Planner:</h3>
-            <p>Makes repeating and tracking tasks much easier.</p>
-            <ul>
-              <li>
-                <a href="https://weekly-planner-jing.vercel.app/">
-                  Try it<span className="visually-hidden"> Weekly Planner</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/xixifish/weekly-planner">
-                  GitHub<span className="visually-hidden"> Weekly Planner</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.figma.com/design/PMOiVwojpmtcMso4lWKBma/weekly-planner?node-id=56-1821&t=MXhWDyzFIBZkF6id-1">
-                  Figma<span className="visually-hidden"> Weekly Planner</span>
-                </a>
-              </li>
-            </ul>
-          </article>
-          <article>
-            <h3>Popcorn Movie Recommender:</h3>
-            <p>Finds a movie to your taste quickly.</p>
-            <ul>
-              <li>
-                <a href="https://popcorn-jing.vercel.app/">
-                  Try it
-                  <span className="visually-hidden">
-                    {" "}
-                    Popcorn Movie Recommender
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/xixifish/movie-recommender">
-                  GitHub
-                  <span className="visually-hidden">
-                    {" "}
-                    Popcorn Movie Recommender
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.figma.com/design/moBbyis5f87CvI4eKIdd2e/movie-recommender?node-id=273-2270&t=3">
-                  Figma
-                  <span className="visually-hidden">
-                    {" "}
-                    Popcorn Movie Recommender
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </article>
+          {PROJECTS.map((project) => (
+            <ProjectCard key={project.name} project={project} />
+          ))}
         </section>
       </main>
       <footer>

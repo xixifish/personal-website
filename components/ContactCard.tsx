@@ -39,7 +39,7 @@ export function ContactCard() {
           </p>
           <a
             className={styles.downloadCV}
-            href="/jing-chen-cv.pdf"
+            href="/jingchen-cv.pdf"
             target="_blank"
           >
             View Resume

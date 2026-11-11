@@ -10,7 +10,8 @@ export type Project = {
 export const PROJECTS: Project[] = [
   {
     name: "Weekly Planner",
-    tagline: "Makes repeating and tracking tasks much easier.",
+    tagline:
+      "Makes repeating and tracking tasks much easier. Try it as a guest, no sign-in needed.",
     liveUrl: "https://weekly-planner-jing.vercel.app/",
     githubUrl: "https://github.com/xixifish/weekly-planner",
     figmaUrl:

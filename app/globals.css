@@ -48,6 +48,8 @@ body {
   font-family: var(--font-body);
   font-size: var(--text-body);
   font-weight: 500;
+  -webkit-font-smoothing: antialiased; /* Fix the browsers draw text heavier */
+  -moz-osx-font-smoothing: grayscale;
   color: var(--color-text);
   line-height: 1.625;
   background-color: var(--color-bg);

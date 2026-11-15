@@ -1,5 +1,4 @@
 import styles from "./page.module.css";
-import Image from "next/image";
 import { Divider } from "@/components/Divider";
 import { ContactCard } from "@/components/ContactCard";
 import { PROJECTS } from "@/data/projects";
@@ -8,16 +7,6 @@ import { ProjectCard } from "@/components/ProjectCard";
 export default function Home() {
   return (
     <div className={styles.page}>
-      <header className={styles.header}>
-        <Image
-          src="/avatar.jpg"
-          alt=""
-          width={80}
-          height={80}
-          className={styles.avatar}
-        />
-        <h1 className={styles.name}>Jing Chen</h1>
-      </header>
       <main className={styles.main}>
         <div className={styles.intro}>
           <p>

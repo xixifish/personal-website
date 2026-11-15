@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sacramento, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/Header";
 
 const dmSans = DM_Sans({
   variable: "--font-body",
@@ -23,7 +24,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${dmSans.variable} ${sacramento.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

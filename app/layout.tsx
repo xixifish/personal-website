@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 
 const dmSans = DM_Sans({
   variable: "--font-body",
-  weight: ["500", "600", "700"],
+  axes: ["opsz"],
   subsets: ["latin"],
 });
 

@@ -3,11 +3,24 @@ import { Divider } from "@/components/Divider";
 import { ContactCard } from "@/components/ContactCard";
 import { PROJECTS } from "@/data/projects";
 import { ProjectCard } from "@/components/ProjectCard";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <div className={styles.hero}>
+          <h1 className={styles.heroText}>
+            I design products, then I build them.
+          </h1>
+          <Image
+            width={90}
+            height={90}
+            src="/avatar.jpg"
+            alt="Portrait of Jing Chen"
+            className={styles.avatar}
+          />
+        </div>
         <div className={styles.intro}>
           <p>
             Welcome, I’m Jing, living in Sydney and finishing my Master of IT at

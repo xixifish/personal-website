@@ -1,5 +1,8 @@
 .avatar {
   border-radius: 50%;
+  outline: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+  outline-offset: -1px;
+  flex-shrink: 0;
 }
 
 .page {
@@ -27,6 +30,20 @@
   flex: 1;
   width: min(100% - 2.5rem, var(--column));
   margin-inline: auto;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+
+.heroText {
+  max-width: 394px;
+  font-size: var(--text-headline);
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: -0.03em;
 }
 
 .intro {

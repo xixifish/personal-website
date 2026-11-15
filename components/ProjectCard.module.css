@@ -1,5 +1,5 @@
 .project {
-  border-bottom: 1px dotted var(--color-brown);
+  border-bottom: 1px dotted var(--color-line);
 }
 
 .cover {
@@ -39,7 +39,7 @@
 .links li + li::before {
   content: "/" / "";
   margin-right: var(--space-3);
-  color: var(--color-brown);
+  color: var(--color-text);
 }
 
 @media (hover: none) {

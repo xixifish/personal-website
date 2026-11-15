@@ -1,11 +1,10 @@
 :root {
   /* Colors */
-  --color-text: #251803;
-  --color-brown: #603500;
-  --color-muted: #68645e;
-  --color-line: #e2dac5;
-  --color-paper: #efe8d8;
-  --color-link-hover: #8a5418;
+  --color-text: #1c1b19;
+  --color-muted: #5f5c55;
+  --color-line: #e7e7e7;
+  --color-bg: #fcfbf8;
+  --color-highlight: #fff3c4;
 
   /* Sizes */
   --text-name: 3.125rem;
@@ -33,26 +32,23 @@
 }
 
 a {
-  color: var(--color-brown);
-  font-family: var(--font-hand);
+  color: var(--color-text);
   text-underline-offset: 0.2rem;
   text-decoration-thickness: 1px;
 }
 
 a:hover,
 a:focus-visible {
-  color: var(--color-link-hover);
   text-decoration-style: wavy;
 }
 
 body {
   font-family: var(--font-body);
   font-size: var(--text-body);
+  font-weight: 500;
   color: var(--color-text);
   line-height: 1.4;
-  background-image: url("/paper.jpg");
-  background-size: 154px 154px;
-  background-color: var(--color-paper);
+  background-color: var(--color-bg);
 }
 
 h2 {

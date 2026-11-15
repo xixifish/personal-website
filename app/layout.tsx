@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
-import { Kalam, Lato } from "next/font/google";
+import { Sacramento, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const lato = Lato({
+const dmSans = DM_Sans({
   variable: "--font-body",
-  weight: ["400", "900"],
-  style: ["normal", "italic"],
+  weight: ["500", "600", "700"],
   subsets: ["latin"],
 });
 
-const kalam = Kalam({
-  variable: "--font-hand",
-  weight: ["400", "700"],
+const sacramento = Sacramento({
+  variable: "--font-logo",
+  weight: ["400"],
   subsets: ["latin"],
 });
 
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${lato.variable} ${kalam.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${sacramento.variable}`}>
       <body>{children}</body>
     </html>
   );

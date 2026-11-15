@@ -18,7 +18,7 @@
 }
 
 .name {
-  font-family: var(--font-hand);
+  font-family: var(--font-logo);
   font-size: var(--text-name);
   line-height: 1;
 }

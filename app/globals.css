@@ -49,6 +49,12 @@ body {
   color: var(--color-text);
   line-height: 1.4;
   background-color: var(--color-bg);
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-text) 6%, transparent) 1px,
+    transparent 1.5px
+  );
+  background-size: 22px 22px;
 }
 
 h2 {

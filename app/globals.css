@@ -7,11 +7,13 @@
   --color-highlight: #fff3c4;
 
   /* Sizes */
-  --text-name: 3.125rem;
-  --text-body: 1.125rem;
-  --text-label: 1rem;
+  --text-headline: 3.25rem;
+  --text-heading: 1.75rem;
+  --text-nav: 1.125rem;
+  --text-body: 1rem;
   --text-small: 0.875rem;
-  --column: 35rem; /* 560px */
+  --text-logo: 2rem;
+  --column: 55.9375rem; /* 895px */
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -47,7 +49,7 @@ body {
   font-size: var(--text-body);
   font-weight: 500;
   color: var(--color-text);
-  line-height: 1.4;
+  line-height: 1.625;
   background-color: var(--color-bg);
   background-image: radial-gradient(
     circle,

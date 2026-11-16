@@ -1,5 +1,10 @@
 .avatar {
   border-radius: 50%;
+  outline: 1px solid var(--color-edge);
+  outline-offset: -1px;
+  filter: grayscale(1);
+  flex-shrink: 0;
+  transition: 0.3s;
 }
 
 .page {
@@ -8,44 +13,276 @@
   min-height: 100dvh;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  margin-inline: auto;
-  width: min(100% - 2.5rem, var(--column));
-  gap: var(--space-5);
-  padding-top: var(--space-8);
-}
-
-.name {
-  font-family: var(--font-hand);
-  font-size: var(--text-name);
-  line-height: 1;
-}
-
 .main {
   flex: 1;
   width: min(100% - 2.5rem, var(--column));
   margin-inline: auto;
 }
 
-.intro {
+.heroSection {
+  padding-bottom: var(--space-15);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.heroSection:hover .avatar,
+.heroSection:focus-within .avatar {
+  filter: none;
+}
+
+@media (hover: none) {
+  .avatar {
+    filter: none;
+  }
+}
+
+.heroTop {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
+  justify-content: space-between;
+  padding-top: var(--space-12);
+}
+
+.heroText {
+  max-width: 394px;
+  font-size: var(--text-headline);
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: -0.03em;
+}
+
+.intro {
+  max-width: 650px;
   padding-top: var(--space-5);
+  color: var(--color-muted);
+}
+
+.intro mark {
+  background-color: var(--color-highlight);
+  color: inherit;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-7);
+  font-style: normal;
+  padding-top: var(--space-6);
+}
+
+.email {
+  display: inline-flex;
+  min-height: 44px;
+  font-weight: 600;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border-radius: 4px;
+  padding-block: var(--space-2);
+  padding-inline: var(--space-4);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-muted);
+}
+
+/* Phones: avatar above the headline, full-width email button */
+@media (max-width: 640px) {
+  .heroTop {
+    flex-direction: column-reverse; /* avatar shows first, h1 stays first in the HTML */
+    align-items: flex-start;
+    gap: var(--space-5);
+    padding-top: var(--space-8);
+  }
+
+  .heroText {
+    font-size: clamp(2rem, 10vw, 2.5rem); /* 32px at 320, 40px from 400 */
+  }
+
+  .contact {
+    gap: var(--space-4);
+  }
+
+  .email {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .location {
+    font-size: var(--text-small); /* fits next to LinkedIn at 375px */
+  }
+}
+
+.section {
+  padding-block: var(--space-15);
+  border-bottom: 1px solid var(--color-line);
+}
+
+/* The last section sits above the footer, which has its own top line */
+.section:last-child {
+  border-bottom: none;
+}
+
+/* Narrow screens: less space between sections */
+@media (max-width: 700px) {
+  .heroSection {
+    padding-bottom: var(--space-10);
+  }
+
+  .section {
+    padding-block: var(--space-10);
+  }
+}
+
+.projectList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+/* Narrow screens: cards stack in one column */
+@media (max-width: 700px) {
+  .projectList {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+}
+
+.sectionIntro {
+  color: var(--color-muted);
+}
+
+.designList {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-7);
+  /* Dashed line: 2px dash, 2px gap (border-style can't set the lengths) */
+  background-image: linear-gradient(
+    to right,
+    var(--color-line) 50%,
+    transparent 50%
+  );
+  background-size: 4px 1px;
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+
+.designRow {
+  display: grid;
+  grid-template-columns: 30% 28% 1fr;
+  padding-block: var(--space-3);
+  background-image: inherit;
+  background-size: inherit;
+  background-repeat: inherit;
+  background-position: top;
+}
+
+.designRow span + span {
+  color: var(--color-muted);
+}
+
+/* Narrow screens: title and client on one line, result below */
+@media (max-width: 700px) {
+  .designRow {
+    grid-template-columns: 1fr auto;
+    column-gap: var(--space-4);
+  }
+
+  .designRow span:last-child {
+    grid-column: 1 / -1; /* the result spans both columns, so it starts a new line */
+  }
+}
+
+.libraryList {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-6);
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-7);
+}
+
+.libraryCover {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  outline: 1px solid var(--color-edge);
+  outline-offset: -1px;
+  filter: grayscale(1);
+  transition: filter 0.3s;
+}
+
+.libraryItem:hover .libraryCover {
+  filter: none;
+}
+
+.libraryMonth {
+  margin-top: var(--space-2);
+  color: var(--color-muted);
+}
+
+/* Covers get narrower than ~100px below 900px, so the month gets smaller too */
+@media (max-width: 900px) {
+  .libraryMonth {
+    font-size: var(--text-small);
+  }
+}
+
+/* Must come after .libraryCover, or its grey filter wins */
+@media (hover: none) {
+  .libraryCover {
+    filter: none;
+  }
+}
+
+/* Narrow screens: one row that scrolls sideways, edge to edge */
+@media (max-width: 700px) {
+  .libraryList {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    /* About 2.5 covers in view, so the cut-off one hints at more; max 140px */
+    grid-auto-columns: min(calc((100% - 2 * var(--space-4)) / 2.5), 140px);
+    gap: var(--space-4);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    /* Stretch to the screen edges, keep the first cover lined up with the text */
+    margin-inline: -1.25rem;
+    padding-inline: 1.25rem;
+    scroll-padding-inline: 1.25rem;
+    padding-bottom: var(--space-2);
+  }
+
+  .libraryItem {
+    scroll-snap-align: start;
+  }
 }
 
 .footer {
-  border-top: 1px solid var(--color-line);
-  box-shadow: inset 0 4px 10px rgb(247 241 226);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-6);
+  width: min(100% - 2.5rem, var(--column));
+  margin-inline: auto;
   margin-top: 7rem;
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--color-line);
+  color: var(--color-muted);
 }
 
-.footerText {
-  font-size: var(--text-small);
-  text-align: center;
-  padding-inline: var(--space-5);
-  padding-block: var(--space-5);
-  color: var(--color-muted);
+.footer a {
+  color: inherit;
+}
+
+/* Narrow screens: smaller footer text, less space above */
+@media (max-width: 700px) {
+  .footer {
+    margin-top: var(--space-12);
+    font-size: var(--text-small);
+  }
 }

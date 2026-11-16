@@ -1,0 +1,44 @@
+.header {
+  width: min(100% - 2.5rem, var(--column));
+  height: 6.25rem; /* 100px */
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.logo {
+  font-family: var(--font-logo);
+  font-size: var(--text-logo);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.list {
+  display: flex;
+  gap: var(--space-6);
+  list-style: none;
+  padding: 0;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* big enough to tap */
+  font-size: var(--text-nav);
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--color-text);
+}
+
+.link[aria-current="page"] {
+  color: var(--color-text);
+  text-decoration: underline 2px;
+  text-underline-offset: 12px;
+}

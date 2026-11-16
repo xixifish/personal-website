@@ -1,5 +1,7 @@
-.project {
-  border-bottom: 1px dotted var(--color-brown);
+.coverLink {
+  display: block;
+  background-color: var(--color-line);
+  border-radius: 4px;
 }
 
 .cover {
@@ -7,39 +9,48 @@
   width: 100%;
   height: auto;
   filter: grayscale(1);
-  transition: filter 0.3s;
   border-radius: 1px;
   margin-block: var(--space-4);
+  transition:
+    filter 0.3s,
+    background-color 0.3s;
 }
 
 .coverLink:hover .cover,
 .coverLink:focus-visible .cover {
   filter: none;
-}
-
-.name,
-.tagline {
-  display: inline;
+  background-color: var(--color-bg-darker);
+  border-radius: inherit;
 }
 
 .name {
-  font-weight: 900;
-  font-size: var(--text-body);
+  font-weight: 800;
+  font-size: var(--text-nav);
+  padding-bottom: var(--space-3);
+}
+
+.tagline {
+  color: var(--color-muted);
 }
 
 .links {
   display: flex;
   list-style: none;
-  padding: 0;
-  gap: var(--space-3);
+  padding: var(--space-4) 0 0 0;
+  gap: var(--space-6);
   margin-top: var(--space-1);
   margin-bottom: var(--space-4);
 }
 
-.links li + li::before {
-  content: "/" / "";
-  margin-right: var(--space-3);
-  color: var(--color-brown);
+.links a {
+  color: var(--color-muted);
+}
+
+.links .live {
+  display: inline-flex;
+  color: var(--color-text);
+  align-items: center;
+  gap: 2px;
 }
 
 @media (hover: none) {

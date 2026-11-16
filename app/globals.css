@@ -1,28 +1,34 @@
 :root {
   /* Colors */
-  --color-text: #251803;
-  --color-brown: #603500;
-  --color-muted: #68645e;
-  --color-line: #e2dac5;
-  --color-paper: #efe8d8;
-  --color-link-hover: #8a5418;
+  --color-text: #1c1b19;
+  --color-muted: #5f5c55;
+  --color-line: #e7e7e7;
+  --color-bg: #fcfbf8;
+  --color-highlight: #ffefae;
+  --color-bg-darker: #c4c4c4;
+  --color-edge: color-mix(in srgb, var(--color-text) 10%, transparent); /* thin edge on images */
 
   /* Sizes */
-  --text-name: 3.125rem;
-  --text-body: 1.125rem;
-  --text-label: 1rem;
+  --text-headline: 3.25rem;
+  --text-heading: 1.75rem;
+  --text-nav: 1.125rem;
+  --text-body: 1rem;
   --text-small: 0.875rem;
-  --column: 35rem; /* 560px */
+  --text-logo: 2rem;
+  --column: 55.9375rem; /* 895px */
 
   /* Spacing */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-12: 3rem;
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-7: 1.75rem; /* 28px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-15: 3.75rem; /* 60px */
 }
 
 *,
@@ -33,31 +39,36 @@
 }
 
 a {
-  color: var(--color-brown);
-  font-family: var(--font-hand);
-  text-underline-offset: 0.2rem;
-  text-decoration-thickness: 1px;
+  color: var(--color-text);
+  text-underline-offset: 0.3rem;
+  text-decoration-thickness: 1.5px;
 }
 
 a:hover,
 a:focus-visible {
-  color: var(--color-link-hover);
   text-decoration-style: wavy;
 }
 
 body {
   font-family: var(--font-body);
   font-size: var(--text-body);
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased; /* Fix the browsers draw text heavier */
+  -moz-osx-font-smoothing: grayscale;
   color: var(--color-text);
-  line-height: 1.4;
-  background-image: url("/paper.jpg");
-  background-size: 154px 154px;
-  background-color: var(--color-paper);
+  line-height: 1.625;
+  background-color: var(--color-bg);
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-text) 6%, transparent) 1px,
+    transparent 1.5px
+  );
+  background-size: 22px 22px;
 }
 
 h2 {
-  font-size: var(--text-body);
-  font-weight: 400;
+  font-size: var(--text-heading);
+  font-weight: 500;
   margin-bottom: var(--space-4);
 }
 

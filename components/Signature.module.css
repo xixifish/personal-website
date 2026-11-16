@@ -1,0 +1,38 @@
+.signature {
+  display: block;
+  width: 118px;
+  translate: 0 2px;
+}
+
+.pen {
+  fill: none;
+  stroke: white;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1 2; /* a dash as long as the line, then a longer gap */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pen {
+    animation: write 1s ease-in-out both;
+  }
+
+  .chen {
+    animation-delay: 0.9s;
+  }
+
+  .dot {
+    animation-duration: 0.15s;
+    animation-delay: 1.8s;
+  }
+}
+
+@keyframes write {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

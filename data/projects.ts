@@ -22,7 +22,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    name: "Popcorn Movie Recommender",
+    name: "Popcorn",
     tagline:
       "A film recommender that runs a language model in the browser to quickly find a film that suits your taste.",
     liveUrl: "https://popcorn-jing.vercel.app/",

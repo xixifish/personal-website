@@ -16,6 +16,7 @@ const sacramento = Sacramento({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jingchen-dev.vercel.app"),
   title: "Jing Chen",
   description:
     "Designer and software engineer in Sydney, building accessible web apps.",

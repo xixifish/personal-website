@@ -62,11 +62,15 @@
 
 .contact {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-7);
+  flex-direction: column;
+  gap: var(--space-5);
   font-style: normal;
   padding-top: var(--space-6);
+}
+
+.emailButtons {
+  display: flex;
+  gap: var(--space-3);
 }
 
 .email {
@@ -81,6 +85,12 @@
   border-radius: 4px;
   padding-block: var(--space-2);
   padding-inline: var(--space-4);
+}
+
+.linkLocation {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
 }
 
 .location {
@@ -107,8 +117,11 @@
     gap: var(--space-4);
   }
 
+  .emailButtons {
+    flex-direction: column;
+  }
+
   .email {
-    flex-basis: 100%;
     justify-content: center;
   }
 

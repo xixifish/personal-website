@@ -35,7 +35,7 @@
 .hero {
   display: flex;
   justify-content: space-between;
-  padding-top: 50px;
+  padding-top: var(--space-12);
 }
 
 .heroText {
@@ -47,10 +47,14 @@
 }
 
 .intro {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
+  max-width: 650px;
   padding-top: var(--space-5);
+  color: var(--color-muted);
+}
+
+.intro mark {
+  background-color: var(--color-highlight);
+  color: inherit;
 }
 
 .footer {

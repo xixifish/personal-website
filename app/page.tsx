@@ -21,18 +21,14 @@ export default function Home() {
             className={styles.avatar}
           />
         </div>
-        <div className={styles.intro}>
-          <p>
-            Welcome, I’m Jing, living in Sydney and finishing my Master of IT at
-            UNSW soon. I used to work as a product designer for five years.
-          </p>
-          <p>
-            I care about <strong>how a product works</strong> and{" "}
-            <strong>how it looks</strong>, and have designed products for many
-            businesses in New Zealand and China. Now, I’m looking for a software
-            engineering role, in design engineering, frontend or full-stack.
-          </p>
-        </div>
+        <p className={styles.intro}>
+          Welcome, I’m Jing, living in Sydney and finishing my Master of IT at
+          UNSW soon. I used to work as a product designer for five years. I care
+          about <mark>how a product works</mark> and <mark>how it looks</mark>,
+          and have designed products for many businesses in New Zealand and
+          China. Now, I’m looking for a software engineering role, in design
+          engineering, frontend or full-stack.
+        </p>
         <Divider />
 
         <ContactCard />

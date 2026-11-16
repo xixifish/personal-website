@@ -4,24 +4,38 @@ import styles from "./ProjectCard.module.css";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className={styles.project}>
+    <article>
       <a href={project.liveUrl} className={styles.coverLink}>
         <Image
           src={project.cover.src}
-          sizes="(max-width: 600px) 100vw, 560px"
-          width={560}
-          height={270}
+          sizes="(max-width: 600px) 100vw, 435px"
+          width={435}
+          height={365}
           alt={project.cover.alt}
           className={styles.cover}
         />
       </a>
-      <h3 className={styles.name}>{project.name}: </h3>
+      <h3 className={styles.name}>{project.name}</h3>
       <p className={styles.tagline}>{project.tagline}</p>
       <ul className={styles.links}>
         <li>
-          <a href={project.liveUrl}>
+          <a href={project.liveUrl} className={styles.live}>
             Try it
             <span className="visually-hidden">{` ${project.name}`}</span>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M5.83333 5.83325H14.1667V14.1666" />
+              <path d="M5.83333 14.1666L14.1667 5.83325" />
+            </svg>
           </a>
         </li>
         <li>

@@ -66,11 +66,17 @@ export default function Home() {
             </p>
           </address>
         </div>
-        <section>
-          <h2>Recently designed and built:</h2>
-          {PROJECTS.map((project) => (
-            <ProjectCard key={project.name} project={project} />
-          ))}
+        <section className={styles.project}>
+          <h2>Projects</h2>
+          <p>
+            Alongside my studies, I built two apps, and I’m using and improving
+            them every week.
+          </p>
+          <div className={styles.projectList}>
+            {PROJECTS.map((project) => (
+              <ProjectCard key={project.name} project={project} />
+            ))}
+          </div>
         </section>
       </main>
       <footer className={styles.footer}>

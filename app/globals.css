@@ -5,6 +5,7 @@
   --color-line: #e7e7e7;
   --color-bg: #fcfbf8;
   --color-highlight: #ffefae;
+  --color-bg-darker: #c4c4c4;
 
   /* Sizes */
   --text-headline: 3.25rem;
@@ -64,8 +65,8 @@ body {
 }
 
 h2 {
-  font-size: var(--text-body);
-  font-weight: 400;
+  font-size: var(--text-heading);
+  font-weight: 500;
   margin-bottom: var(--space-4);
 }
 

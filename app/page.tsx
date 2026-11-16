@@ -121,11 +121,11 @@ export default function Home() {
         </section>
       </main>
       <footer className={styles.footer}>
-        <p className={styles.footerText}>
+        <p>
           Busy updating this website. View the source on{" "}
-          <a href="https://github.com/xixifish/personal-website">GitHub</a>. ©
-          2026 Jing Chen
+          <a href="https://github.com/xixifish/personal-website">GitHub</a>.
         </p>
+        <p>© 2026 Jing Chen</p>
       </footer>
     </div>
   );

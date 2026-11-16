@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import { PROJECTS } from "@/data/projects";
 import { ProjectCard } from "@/components/ProjectCard";
+import { DESIGNCASES } from "@/data/designCases";
 import Image from "next/image";
 
 export default function Home() {
@@ -68,7 +69,7 @@ export default function Home() {
         </div>
         <section className={styles.project}>
           <h2>Projects</h2>
-          <p>
+          <p className={styles.sectionIntro}>
             Alongside my studies, I built two apps, and I’m using and improving
             them every week.
           </p>
@@ -77,6 +78,22 @@ export default function Home() {
               <ProjectCard key={project.name} project={project} />
             ))}
           </div>
+        </section>
+        <section className={styles.project}>
+          <h2>Design</h2>
+          <p className={styles.sectionIntro}>
+            I aim to deliver simple, elegant solutions that address real user
+            needs while achieving business goals.
+          </p>
+          <ul className={styles.designList}>
+            {DESIGNCASES.map((designCase) => (
+              <li key={designCase.title} className={styles.designRow}>
+                <span>{designCase.title}</span>
+                <span>{designCase.client}</span>
+                <span>{designCase.result}</span>
+              </li>
+            ))}
+          </ul>
         </section>
       </main>
       <footer className={styles.footer}>

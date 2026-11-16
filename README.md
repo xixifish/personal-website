@@ -23,8 +23,9 @@ Coming next:
 
 ## Design
 
-- **Look:** warm off-white background with a faint dot grid, dark text, and a script logo.
-- **Fonts:** DM Sans for text, and Sacramento for the logo.
+- **Look:** warm off-white background with a faint dot grid, dark text, and a handwritten logo.
+- **Font:** DM Sans, loaded as a variable font.
+- **Logo:** an SVG that writes itself stroke by stroke when the page opens, and again on hover. With reduced motion turned on, it shows straight away.
 - **Details:** the avatar, project screenshots and library covers turn from grey to colour on hover. On phones, they show in colour.
 - **Phones:** cards stack, design rows wrap, and the library covers scroll sideways.
 - **Goals:** easy to read, accessible, fast, and working well on phones.
@@ -33,7 +34,7 @@ Coming next:
 
 - [Next.js](https://nextjs.org) (App Router) with React and TypeScript
 - Plain CSS Modules, with CSS variables for colours, sizes and spacing. No UI library.
-- `next/font` to load the Google Fonts from the site itself
+- `next/font` to load the Google Font from the site itself
 - `next/image` for resized, compressed images
 - Prettier and ESLint
 - Hosted on [Vercel](https://vercel.com)
@@ -61,12 +62,12 @@ Other commands:
 
 | Path                  | What's in it                                       |
 | --------------------- | -------------------------------------------------- |
-| `app/layout.tsx`      | Fonts, header and page metadata                    |
+| `app/layout.tsx`      | Font, header and page metadata                     |
 | `app/page.tsx`        | The page content                                   |
 | `app/page.module.css` | Styles for the page sections                       |
 | `app/globals.css`     | Design variables and base styles                   |
 | `app/icon.png` etc.   | Favicon, Apple icon and link preview image         |
-| `components/`         | Header and ProjectCard                             |
+| `components/`         | Header, Signature (the logo) and ProjectCard       |
 | `data/`               | Projects, design cases and library items           |
 | `public/`             | Avatar, project screenshots, library covers and CV |
 

@@ -6,6 +6,7 @@
   --color-bg: #fcfbf8;
   --color-highlight: #ffefae;
   --color-bg-darker: #c4c4c4;
+  --color-edge: color-mix(in srgb, var(--color-text) 10%, transparent); /* thin edge on images */
 
   /* Sizes */
   --text-headline: 3.25rem;

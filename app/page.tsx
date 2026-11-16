@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import { PROJECTS } from "@/data/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 import { DESIGNCASES } from "@/data/designCases";
+import { LIBRARY } from "@/data/library";
 import Image from "next/image";
 
 export default function Home() {
@@ -67,7 +68,7 @@ export default function Home() {
             </p>
           </address>
         </div>
-        <section className={styles.project}>
+        <section className={styles.section}>
           <h2>Projects</h2>
           <p className={styles.sectionIntro}>
             Alongside my studies, I built two apps, and I’m using and improving
@@ -79,7 +80,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section className={styles.project}>
+        <section className={styles.section}>
           <h2>Design</h2>
           <p className={styles.sectionIntro}>
             I aim to deliver simple, elegant solutions that address real user
@@ -91,6 +92,29 @@ export default function Home() {
                 <span>{designCase.title}</span>
                 <span>{designCase.client}</span>
                 <span>{designCase.result}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section className={styles.section}>
+          <h2>Library</h2>
+          <p className={styles.sectionIntro}>
+            In my spare time, I read books and Japanese manga, and watch films
+            and TV shows. They’re where many of my ideas come from. Here are the
+            recent ones.
+          </p>
+          <ul className={styles.libraryList}>
+            {LIBRARY.slice(0, 7).map((item) => (
+              <li key={item.title} className={styles.libraryItem}>
+                <Image
+                  src={item.cover}
+                  width={108}
+                  height={162}
+                  sizes="108px"
+                  alt={item.title}
+                  className={styles.libraryCover}
+                />
+                <p className={styles.libraryMonth}>{item.month}</p>
               </li>
             ))}
           </ul>

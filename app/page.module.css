@@ -1,6 +1,6 @@
 .avatar {
   border-radius: 50%;
-  outline: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+  outline: 1px solid var(--color-edge);
   outline-offset: -1px;
   filter: grayscale(1);
   flex-shrink: 0;
@@ -90,9 +90,14 @@
   color: var(--color-muted);
 }
 
-.project {
+.section {
   padding-block: var(--space-15);
   border-bottom: 1px solid var(--color-line);
+}
+
+/* The last section sits above the footer, which has its own top line */
+.section:last-child {
+  border-bottom: none;
 }
 
 .projectList {
@@ -132,6 +137,42 @@
 
 .designRow span + span {
   color: var(--color-muted);
+}
+
+.libraryList {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-6);
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-7);
+}
+
+.libraryCover {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  outline: 1px solid var(--color-edge);
+  outline-offset: -1px;
+  filter: grayscale(1);
+  transition: filter 0.3s;
+}
+
+.libraryItem:hover .libraryCover {
+  filter: none;
+}
+
+.libraryMonth {
+  margin-top: var(--space-2);
+  color: var(--color-muted);
+}
+
+/* Must come after .libraryCover, or its grey filter wins */
+@media (hover: none) {
+  .libraryCover {
+    filter: none;
+  }
 }
 
 .footer {

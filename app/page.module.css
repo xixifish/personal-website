@@ -90,6 +90,33 @@
   color: var(--color-muted);
 }
 
+/* Phones: avatar above the headline, full-width email button */
+@media (max-width: 640px) {
+  .heroTop {
+    flex-direction: column-reverse; /* avatar shows first, h1 stays first in the HTML */
+    align-items: flex-start;
+    gap: var(--space-5);
+    padding-top: var(--space-8);
+  }
+
+  .heroText {
+    font-size: clamp(2rem, 10vw, 2.5rem); /* 32px at 320, 40px from 400 */
+  }
+
+  .contact {
+    gap: var(--space-4);
+  }
+
+  .email {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .location {
+    font-size: var(--text-small); /* fits next to LinkedIn at 375px */
+  }
+}
+
 .section {
   padding-block: var(--space-15);
   border-bottom: 1px solid var(--color-line);
@@ -100,10 +127,29 @@
   border-bottom: none;
 }
 
+/* Narrow screens: less space between sections */
+@media (max-width: 700px) {
+  .heroSection {
+    padding-bottom: var(--space-10);
+  }
+
+  .section {
+    padding-block: var(--space-10);
+  }
+}
+
 .projectList {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-6);
+}
+
+/* Narrow screens: cards stack in one column */
+@media (max-width: 700px) {
+  .projectList {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
 }
 
 .sectionIntro {
@@ -139,6 +185,18 @@
   color: var(--color-muted);
 }
 
+/* Narrow screens: title and client on one line, result below */
+@media (max-width: 700px) {
+  .designRow {
+    grid-template-columns: 1fr auto;
+    column-gap: var(--space-4);
+  }
+
+  .designRow span:last-child {
+    grid-column: 1 / -1; /* the result spans both columns, so it starts a new line */
+  }
+}
+
 .libraryList {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -168,10 +226,39 @@
   color: var(--color-muted);
 }
 
+/* Covers get narrower than ~100px below 900px, so the month gets smaller too */
+@media (max-width: 900px) {
+  .libraryMonth {
+    font-size: var(--text-small);
+  }
+}
+
 /* Must come after .libraryCover, or its grey filter wins */
 @media (hover: none) {
   .libraryCover {
     filter: none;
+  }
+}
+
+/* Narrow screens: one row that scrolls sideways, edge to edge */
+@media (max-width: 700px) {
+  .libraryList {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    /* About 2.5 covers in view, so the cut-off one hints at more; max 140px */
+    grid-auto-columns: min(calc((100% - 2 * var(--space-4)) / 2.5), 140px);
+    gap: var(--space-4);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    /* Stretch to the screen edges, keep the first cover lined up with the text */
+    margin-inline: -1.25rem;
+    padding-inline: 1.25rem;
+    scroll-padding-inline: 1.25rem;
+    padding-bottom: var(--space-2);
+  }
+
+  .libraryItem {
+    scroll-snap-align: start;
   }
 }
 
@@ -190,4 +277,12 @@
 
 .footer a {
   color: inherit;
+}
+
+/* Narrow screens: smaller footer text, less space above */
+@media (max-width: 700px) {
+  .footer {
+    margin-top: var(--space-12);
+    font-size: var(--text-small);
+  }
 }

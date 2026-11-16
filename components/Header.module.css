@@ -25,6 +25,9 @@
 }
 
 .link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* big enough to tap */
   font-size: var(--text-nav);
   color: var(--color-muted);
   text-decoration: none;

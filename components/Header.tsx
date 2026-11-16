@@ -8,27 +8,8 @@ export function Header() {
         Jing Chen
       </Link>
       <nav aria-label="Main">
+        {/* About, Projects, Design and Library come back when they have their own pages */}
         <ul className={styles.list}>
-          <li>
-            <Link href="/" aria-current="page" className={styles.link}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="/#projects" className={styles.link}>
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link href="/#design" className={styles.link}>
-              Design
-            </Link>
-          </li>
-          <li>
-            <Link href="/#library" className={styles.link}>
-              Library
-            </Link>
-          </li>
           <li>
             <a href="/jingchen-cv.pdf" target="_blank" className={styles.link}>
               Resume{" "}

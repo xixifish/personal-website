@@ -8,7 +8,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <a href={project.liveUrl} className={styles.coverLink}>
         <Image
           src={project.cover.src}
-          sizes="(max-width: 600px) 100vw, 435px"
+          sizes="(max-width: 700px) 100vw, 435px"
           width={435}
           height={365}
           alt={project.cover.alt}

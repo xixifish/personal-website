@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
+import { DotGlow } from "@/components/DotGlow";
 
 const dmSans = DM_Sans({
   variable: "--font-body",
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={dmSans.variable}>
       <body>
+        <DotGlow />
         <Header />
         {children}
       </body>

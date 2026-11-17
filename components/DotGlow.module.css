@@ -1,0 +1,26 @@
+.glow {
+  --x: -999px;
+  --y: -999px;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none; /* Clicks pass through */
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-text) 20%, transparent) 1.5px,
+    transparent 2px
+  );
+  background-size: 22px 22px;
+  /* solid shows, transparent hides under the mask-image */
+  mask-image: radial-gradient(
+    circle 120px at var(--x) var(--y),
+    black,
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce), (hover: none) {
+  .glow {
+    display: none;
+  }
+}

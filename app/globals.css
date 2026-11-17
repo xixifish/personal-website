@@ -67,6 +67,8 @@ body {
     transparent 1.5px
   );
   background-size: 22px 22px;
+  /* For the glowing dot background */
+  position: relative;
 }
 
 h2 {

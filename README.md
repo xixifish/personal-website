@@ -4,13 +4,6 @@ My personal website, designed in Figma and built by hand.
 
 **Live:** [jingchen-dev.vercel.app](https://jingchen-dev.vercel.app)
 
-It's one page with four parts:
-
-- **Intro:** who I am, what I'm looking for, and how to contact me
-- **Projects:** the two apps I've designed and built, with links to try them, the code and the Figma files
-- **Design:** product design work from my five years as a designer
-- **Library:** the books, manga, films and shows I've enjoyed recently
-
 ## Status
 
 The redesign is live. I build it one small step at a time, and every push to `main` goes live.
@@ -20,15 +13,6 @@ Coming next:
 - a page for each section: Projects, Design and Library
 - library covers loaded from Open Library and TMDB, instead of saved by hand
 - a hero background where small bricks build the Sydney Harbour Bridge and Opera House
-
-## Design
-
-- **Look:** warm off-white background with a faint dot grid, dark text, and a handwritten logo.
-- **Font:** DM Sans, loaded as a variable font.
-- **Logo:** an SVG that writes itself stroke by stroke when the page opens, and again on hover. With reduced motion turned on, it shows straight away.
-- **Details:** the avatar, project screenshots and library covers turn from grey to colour on hover. On phones, they show in colour.
-- **Phones:** cards stack, design rows wrap, and the library covers scroll sideways.
-- **Goals:** easy to read, accessible, fast, and working well on phones.
 
 ## Tech
 

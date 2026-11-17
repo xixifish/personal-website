@@ -1,7 +1,7 @@
 .signature {
   display: block;
   width: 118px;
-  translate: 0 2px;
+  translate: 0 2px; /* changes the location a little bit but doesn't impact other elements */
 }
 
 .pen {
@@ -10,6 +10,9 @@
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
+  /* Draw dash on each path (jing, chen and dot) to paint the path white. */
+  /* Then the the white mask can show the real path below it. */
+  /* One dash is as long as one path in the <mask>.*/
   stroke-dasharray: 1 2; /* a dash as long as the line, then a longer gap */
 }
 

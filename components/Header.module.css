@@ -1,6 +1,6 @@
 .header {
   width: min(100% - 2.5rem, var(--column));
-  height: 6.25rem; /* 100px */
+  height: 6rem; /* 100px */
   margin-inline: auto;
   display: flex;
   justify-content: space-between;

@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { EMAIL } from "@/data/contact";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
   let body;
   try {
@@ -43,6 +41,9 @@ export async function POST(request: Request) {
 
   // Send, and handle both kinds of failure
   try {
+    // Created here, not at the top of the file: the build loads this file,
+    // and Resend throws straight away when there's no key
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
       from: "Portfolio website contact <onboarding@resend.dev>",
       to: EMAIL,

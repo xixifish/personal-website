@@ -49,7 +49,7 @@ The contact form needs a Resend API key. Put it in a file called `.env.local`:
 RESEND_API_KEY=re_...
 ```
 
-`npm run build` needs it, because the contact route reads the key when it loads. With `npm run dev`, the rest of the site works without it, and the form shows its error message.
+Without it, the site still builds and runs, and the form shows its error message.
 
 Other commands:
 

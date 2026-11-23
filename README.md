@@ -12,7 +12,14 @@ Coming next:
 
 - a page for each section: Projects, Design and Library
 - library covers loaded from Open Library and TMDB, instead of saved by hand
-- a hero background where small bricks build the Sydney Harbour Bridge and Opera House
+
+## Features
+
+- **Contact form** in the footer. It posts to my own Next.js route, which checks the input, drops spam caught by a hidden honeypot field, and sends the message with [Resend](https://resend.com). The button shows Sending, Sent or an error, and the visitor's text stays if sending fails.
+- **Brick picture** in the footer, drawn on a canvas. When the footer scrolls into view, small bricks fall and build the Sydney Harbour Bridge and Opera House, then fireworks play once. It plays once per visit, shows the finished picture with reduced motion on, and is hidden on phones.
+- **Dot grid** background that darkens around the pointer.
+- **Logo** that writes itself like a pen, and replays on hover.
+- **Copy email** button next to the email link.
 
 ## Tech
 
@@ -20,6 +27,8 @@ Coming next:
 - Plain CSS Modules, with CSS variables for colours, sizes and spacing. No UI library.
 - `next/font` to load the Google Font from the site itself
 - `next/image` for resized, compressed images
+- A Next.js route handler and [Resend](https://resend.com) to send contact messages
+- Canvas 2D for the brick picture and fireworks
 - Prettier and ESLint
 - Hosted on [Vercel](https://vercel.com)
 
@@ -34,6 +43,14 @@ npm run dev
 
 Then open [http://localhost:3000](http://localhost:3000).
 
+The contact form needs a Resend API key. Put it in a file called `.env.local`:
+
+```bash
+RESEND_API_KEY=re_...
+```
+
+`npm run build` needs it, because the contact route reads the key when it loads. With `npm run dev`, the rest of the site works without it, and the form shows its error message.
+
 Other commands:
 
 | Command                  | What it does                 |
@@ -44,15 +61,16 @@ Other commands:
 
 ## Project structure
 
-| Path                  | What's in it                                       |
-| --------------------- | -------------------------------------------------- |
-| `app/layout.tsx`      | Font, header and page metadata                     |
-| `app/page.tsx`        | The page content                                   |
-| `app/page.module.css` | Styles for the page sections                       |
-| `app/globals.css`     | Design variables and base styles                   |
-| `app/icon.png` etc.   | Favicon, Apple icon and link preview image         |
-| `components/`         | Header, Signature (the logo) and ProjectCard       |
-| `data/`               | Projects, design cases and library items           |
-| `public/`             | Avatar, project screenshots, library covers and CV |
+| Path                       | What's in it                                                                                       |
+| -------------------------- | -------------------------------------------------------------------------------------------------- |
+| `app/layout.tsx`           | Font, header, footer and page metadata                                                             |
+| `app/page.tsx`             | The page content                                                                                   |
+| `app/page.module.css`      | Styles for the page sections                                                                       |
+| `app/globals.css`          | Design variables and base styles                                                                   |
+| `app/api/contact/route.ts` | Checks a contact message and sends it with Resend                                                  |
+| `app/icon.png` etc.        | Favicon, Apple icon and link preview image                                                         |
+| `components/`              | Header, Signature (the logo), ProjectCard, CopyEmail, DotGlow, Footer, ContactForm and BrickCanvas |
+| `data/`                    | Projects, design cases, library items, my email and the brick picture map                          |
+| `public/`                  | Avatar, project screenshots, library covers and CV                                                 |
 
 © 2026 Jing Chen

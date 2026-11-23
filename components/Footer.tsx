@@ -1,10 +1,12 @@
 import styles from "./Footer.module.css";
 import { ContactForm } from "./ContactForm";
+import { BrickCanvas } from "./BrickCanvas";
 import { EMAIL } from "@/data/contact";
 
 export function Footer() {
   return (
     <footer className={styles.footer}>
+      <BrickCanvas />
       <div className={styles.wrapper}>
         <h2>Thank you for visiting.</h2>
         <p className={styles.intro}>

@@ -1,5 +1,6 @@
 /* Dark block across the full width; the content inside keeps the column width */
 .footer {
+  position: relative;
   margin-top: 7rem;
   padding-block: var(--space-15) var(--space-8);
   background-color: var(--color-text);
@@ -7,6 +8,7 @@
 }
 
 .wrapper {
+  position: relative; /* the content in wrapper can sit above the canvas */
   width: min(100% - 2.5rem, var(--column));
   margin-inline: auto;
 }

@@ -274,28 +274,3 @@
     scroll-snap-align: start;
   }
 }
-
-.footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--space-2) var(--space-6);
-  width: min(100% - 2.5rem, var(--column));
-  margin-inline: auto;
-  margin-top: 7rem;
-  padding-block: var(--space-6);
-  border-top: 1px solid var(--color-line);
-  color: var(--color-muted);
-}
-
-.footer a {
-  color: inherit;
-}
-
-/* Narrow screens: smaller footer text, less space above */
-@media (max-width: 700px) {
-  .footer {
-    margin-top: var(--space-12);
-    font-size: var(--text-small);
-  }
-}

@@ -6,7 +6,7 @@ import { LIBRARY } from "@/data/library";
 import Image from "next/image";
 import { CopyEmail } from "@/components/CopyEmail";
 
-const EMAIL = "jing.chen.dev@gmail.com";
+import { EMAIL } from "@/data/contact";
 
 export default function Home() {
   return (
@@ -128,13 +128,6 @@ export default function Home() {
           </ul>
         </section>
       </main>
-      <footer className={styles.footer}>
-        <p>
-          Busy updating this website. View the source on{" "}
-          <a href="https://github.com/xixifish/personal-website">GitHub</a>.
-        </p>
-        <p>© 2026 Jing Chen</p>
-      </footer>
     </div>
   );
 }

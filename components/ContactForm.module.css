@@ -1,0 +1,82 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 34rem; /* about half the column, as in the design */
+}
+
+/* 20% white over the dark footer, so the bricks can show through later */
+.field {
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  font: inherit;
+  color: inherit;
+  background-color: color-mix(in srgb, var(--color-bg) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-bg) 25%, transparent);
+  border-radius: 4px;
+}
+
+.field::placeholder {
+  color: color-mix(in srgb, var(--color-bg) 75%, transparent);
+}
+
+textarea.field {
+  resize: vertical;
+}
+
+/* Off-screen instead of display: none, so bots still see and fill it */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin-top: var(--space-2);
+}
+
+.button {
+  min-height: 44px;
+  padding-block: var(--space-2);
+  padding-inline: var(--space-6);
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-text);
+  background-color: var(--color-line);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.button:hover {
+  background-color: var(--color-bg);
+}
+
+.button:hover:not(:disabled) {
+  background-color: var(--color-bg);
+}
+
+.button:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+/* Narrow screens: full-width button, message centred below it */
+@media (max-width: 700px) {
+  .form {
+    max-width: none;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+  }
+
+  .status {
+    text-align: center;
+  }
+}

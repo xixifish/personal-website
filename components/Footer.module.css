@@ -1,0 +1,41 @@
+/* Dark block across the full width; the content inside keeps the column width */
+.footer {
+  margin-top: 7rem;
+  padding-block: var(--space-15) var(--space-8);
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.wrapper {
+  width: min(100% - 2.5rem, var(--column));
+  margin-inline: auto;
+}
+
+/* Global links are dark; on the dark footer they take the light text colour */
+.footer a {
+  color: inherit;
+}
+
+.intro {
+  margin-bottom: var(--space-8);
+}
+
+.bottom {
+  margin-top: var(--space-8);
+  text-align: right;
+}
+
+/* Narrow screens: less space, a line above the copyright, centred */
+@media (max-width: 700px) {
+  .footer {
+    margin-top: var(--space-12);
+    padding-block: var(--space-10) var(--space-6);
+  }
+
+  .bottom {
+    margin-top: var(--space-12);
+    padding-top: var(--space-6);
+    border-top: 1px solid color-mix(in srgb, var(--color-bg) 20%, transparent);
+    text-align: center;
+  }
+}

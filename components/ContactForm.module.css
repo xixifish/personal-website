@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  max-width: 34rem; /* about half the column, as in the design */
 }
 
 /* 20% white over the dark footer, so the bricks can show through later */
@@ -14,6 +13,7 @@
   background-color: color-mix(in srgb, var(--color-bg) 20%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-bg) 25%, transparent);
   border-radius: 4px;
+  max-width: 27.5rem; /* 440px; the button row below may be wider */
 }
 
 .field::placeholder {
@@ -21,6 +21,7 @@
 }
 
 textarea.field {
+  height: 6.25rem; /* 100px */
   resize: vertical;
 }
 
@@ -33,8 +34,7 @@ textarea.field {
 .actions {
   display: flex;
   align-items: center;
-  gap: var(--space-6);
-  margin-top: var(--space-2);
+  gap: var(--space-4);
 }
 
 .button {
@@ -48,11 +48,7 @@ textarea.field {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  min-width: 150px;
-}
-
-.button:hover {
-  background-color: var(--color-bg);
+  min-width: 9.375rem; /* 150px */
 }
 
 .button:hover:not(:disabled) {
@@ -66,7 +62,7 @@ textarea.field {
 
 /* Narrow screens: full-width button, message centred below it */
 @media (max-width: 700px) {
-  .form {
+  .field {
     max-width: none;
   }
 

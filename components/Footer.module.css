@@ -2,9 +2,9 @@
 .footer {
   position: relative;
   margin-top: 7rem;
-  padding-block: var(--space-15) var(--space-8);
+  padding-block: var(--space-12) var(--space-5);
   background-color: var(--color-text);
-  color: var(--color-bg);
+  color: var(--color-line);
 }
 
 .wrapper {
@@ -18,12 +18,16 @@
   color: inherit;
 }
 
+.footer h2 {
+  margin-bottom: var(--space-3);
+}
+
 .intro {
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-5);
 }
 
 .bottom {
-  margin-top: var(--space-8);
+  margin-top: var(--space-6);
   text-align: right;
 }
 

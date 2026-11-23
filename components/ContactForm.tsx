@@ -24,9 +24,16 @@ export function ContactForm() {
     setStatus("sending");
 
     try {
-      // Fake send for step 2: wait 1 second, then fail about half the time.
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      if (Math.random() < 0.5) throw new Error("Fake failure");
+      // Send the fields (email, message, website) to the route as JSON
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+
+      // fetch only throws when there's no connection; a 400 or 500 still
+      // comes back as a response, so check the status too
+      if (!response.ok) throw new Error("Send failed");
 
       form.reset(); // empty the fields
       setStatus("sent");

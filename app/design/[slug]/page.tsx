@@ -34,7 +34,6 @@ export async function generateMetadata({
   const designCase = DESIGNCASES.find((item) => item.slug === slug);
   if (!designCase) notFound();
 
-  const title = `${designCase.title} · Jing Chen`;
   return { title: designCase.title, description: designCase.summary };
 }
 

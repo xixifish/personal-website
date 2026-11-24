@@ -82,6 +82,14 @@
   scroll-margin-top: var(--space-8);
 }
 
+.body img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: var(--space-8);
+  border-radius: 4px;
+}
+
 .menu {
   grid-column: 2;
   grid-row: 1;

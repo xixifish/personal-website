@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "./page.module.css";
+import { CaseMenu } from "@/components/CaseMenu";
 
 // Cases that have an article in content/design/<slug>.mdx.
 // Add a slug here when its MDX file is written.
@@ -14,15 +15,6 @@ export function generateStaticParams() {
 }
 
 export const dynamicParams = false;
-
-// The side menu. Same four sections on every case.
-// rehype-slug gives the h2s their ids; "brief" is set on the h1 below.
-const SECTIONS = [
-  { id: "brief", label: "Brief" },
-  { id: "problem", label: "Problem" },
-  { id: "what-i-did", label: "What I did" },
-  { id: "result", label: "Result" },
-];
 
 export async function generateMetadata({
   params,
@@ -69,17 +61,9 @@ export default async function DesignCasePage({
         Back
       </Link>
       <div className={styles.layout}>
-        <nav aria-label="On this page" className={styles.menu}>
-          <ul>
-            {SECTIONS.map((section) => (
-              <li key={section.id}>
-                <a href={`#${section.id}`}>{section.label}</a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <CaseMenu className={styles.menu} />
         <article className={styles.article}>
-          <h1 id="brief">{designCase.title}</h1>
+          <h1>{designCase.title}</h1>
           <p className={styles.meta}>
             <strong>{designCase.client}</strong>
             {" · "}

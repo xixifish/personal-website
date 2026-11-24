@@ -1,3 +1,9 @@
+import { DESIGNCASES } from "@/data/designCases";
+import { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import styles from "./page.module.css";
+
 // Cases that have an article in content/design/<slug>.mdx.
 // Add a slug here when its MDX file is written.
 const WRITTEN_CASES = ["chunbo-checkout"];
@@ -9,13 +15,82 @@ export function generateStaticParams() {
 
 export const dynamicParams = false;
 
+// The side menu. Same four sections on every case.
+// rehype-slug gives the h2s their ids; "brief" is set on the h1 below.
+const SECTIONS = [
+  { id: "brief", label: "Brief" },
+  { id: "problem", label: "Problem" },
+  { id: "what-i-did", label: "What I did" },
+  { id: "result", label: "Result" },
+];
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  const designCase = DESIGNCASES.find((item) => item.slug === slug);
+  if (!designCase) notFound();
+
+  const title = `${designCase.title} · Jing Chen`;
+  return { title: designCase.title, description: designCase.summary };
+}
+
 export default async function DesignCasePage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
+  const designCase = DESIGNCASES.find((item) => item.slug === slug);
+  if (!designCase) notFound();
+
   const { default: Article } = await import(`@/content/design/${slug}.mdx`);
 
-  return <Article />;
+  return (
+    <main className={styles.main}>
+      <Link href="/#design" className={styles.back}>
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          stroke="currentColor"
+          aria-hidden="true"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M15.8335 10H4.16683" />
+          <path d="M10 4.16675L4.16667 10.0001L10 15.8334" />
+        </svg>
+        Back
+      </Link>
+      <div className={styles.layout}>
+        <nav aria-label="On this page" className={styles.menu}>
+          <ul>
+            {SECTIONS.map((section) => (
+              <li key={section.id}>
+                <a href={`#${section.id}`}>{section.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <article className={styles.article}>
+          <h1 id="brief">{designCase.title}</h1>
+          <p className={styles.meta}>
+            <strong>{designCase.client}</strong>
+            {" · "}
+            {[designCase.sector, designCase.role, designCase.year].join(" · ")}
+          </p>
+          <div className={styles.body}>
+            <Article />
+          </div>
+        </article>
+      </div>
+    </main>
+  );
 }

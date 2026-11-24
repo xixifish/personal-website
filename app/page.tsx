@@ -88,7 +88,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section className={styles.section}>
+        <section id="design" className={styles.section}>
           <h2>Design</h2>
           <p className={styles.sectionIntro}>
             I aim to deliver simple, elegant solutions that address real user

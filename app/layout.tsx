@@ -13,7 +13,7 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jingchen-dev.vercel.app"),
-  title: "Jing Chen",
+  title: { default: "Jing Chen", template: "%s · Jing Chen" },
   description:
     "Designer and software engineer in Sydney, building accessible web apps.",
 };

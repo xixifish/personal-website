@@ -1,0 +1,179 @@
+/* Same column as the home page */
+.main {
+  width: min(100% - 2.5rem, var(--column));
+  margin-inline: auto;
+  padding-top: var(--space-8);
+}
+
+/* Arrow and text on one line, like the "Try it" link */
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Two columns: article left, menu right.
+   The nav comes first in the HTML, so place both by hand. */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 650px) 125px;
+  justify-content: space-between;
+  column-gap: var(--space-12); /* keeps a gap when the screen gets narrower */
+  margin-top: var(--space-8);
+}
+
+.article {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* Title: same as the home section headings */
+.article h1 {
+  font-size: var(--text-heading);
+  font-weight: 500;
+  margin-bottom: var(--space-4);
+}
+
+/* Client · sector · role · year */
+.meta {
+  margin-bottom: var(--space-4);
+}
+
+/* The MDX text is grey; its headings stay dark */
+.body {
+  color: var(--color-muted);
+}
+
+.body h2,
+.body h3,
+.body strong {
+  color: var(--color-text);
+}
+
+/* Lists: smaller indent than the browser's 40px default */
+.body ul {
+  padding-left: var(--space-6);
+}
+
+/* Section headings: same as the project titles on the home page */
+.article h2,
+.article h3 {
+  font-size: var(--text-nav);
+  font-weight: 800;
+  margin-bottom: var(--space-4);
+}
+
+/* Small gap between paragraphs, and before a list that follows one */
+.article p + p,
+.article p + ul {
+  margin-top: var(--space-2);
+}
+
+.article h2 {
+  margin-top: var(--space-8); /* section to section */
+}
+
+.article h3 {
+  margin-top: var(--space-8);
+}
+
+/* Leave a little room above a heading after a menu jump */
+.article [id] {
+  scroll-margin-top: var(--space-8);
+}
+
+/* Gap above an image, or above an image with a caption */
+.body > img,
+.body > figure {
+  margin-top: var(--space-8);
+}
+
+/* Images fill the column */
+.body > img,
+.body figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Small grey line under an image */
+.body figcaption {
+  margin-top: var(--space-2);
+  font-size: var(--text-small);
+}
+
+.menu {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start; /* without this, the grid stretches it and sticky can't work */
+  position: sticky;
+  top: var(--space-8);
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  color: var(--color-text);
+}
+
+/* The section is being read */
+.menu a[aria-current] {
+  color: var(--color-text);
+}
+
+/* Phones: one column, menu as a row above the title */
+@media (max-width: 700px) {
+  .layout {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-6);
+    margin-top: var(--space-5);
+  }
+
+  .article,
+  .menu {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* Sticks to the top of the screen while reading */
+  .menu {
+    top: 0;
+    z-index: 1; /* stays above images in the article */
+    background-color: var(--color-bg); /* hides the text scrolling under it */
+    border-bottom: 1px solid var(--color-line);
+    /* Full width: reach past the column edges, keep the links in line */
+    margin-inline: -1.25rem;
+    padding-inline: 1.25rem;
+  }
+
+  /* After a menu jump, land the heading below the sticky bar */
+  .article [id] {
+    scroll-margin-top: 4rem;
+  }
+
+  .menu ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: var(--space-4);
+    row-gap: 0;
+  }
+
+  .menu a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+  }
+}

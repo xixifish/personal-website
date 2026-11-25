@@ -1,0 +1,114 @@
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-top: var(--space-8);
+  --pos: calc(var(--p) * 1%);
+}
+
+.wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.before {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+}
+
+/* White line on the cut between before and after */
+.line {
+  position: absolute;
+  top: 3%;
+  bottom: 3%;
+  left: var(--pos);
+  width: 5px;
+  background-color: white;
+  translate: -50% 0; /* centre the line on the cut */
+  pointer-events: none; /* drags go through to the input below */
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.15);
+  border-radius: 1px;
+}
+
+.range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+}
+
+.range:focus-visible + .line .handle {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+/* Round handle in the middle of the line */
+.handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%; /* centre the circle on the line */
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: white;
+  color: var(--color-text);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.2);
+}
+
+/* "Before" and "After" pills in the top corners */
+.label {
+  position: absolute;
+  top: var(--space-4);
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  background-color: var(--color-text);
+  color: var(--color-line);
+  font-size: var(--text-small);
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.labelBefore {
+  left: var(--space-4);
+  opacity: clamp(0, (var(--p) - 30) / 20, 1);
+}
+
+.labelAfter {
+  right: var(--space-4);
+  opacity: clamp(0, (70 - var(--p)) / 20, 1);
+}
+
+/* Phones: smaller pills, closer to the corners */
+@media (max-width: 700px) {
+  .handle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .handle svg {
+    width: 21px;
+    height: auto;
+  }
+
+  .label {
+    top: var(--space-3);
+    padding: 2px var(--space-2);
+    font-size: 0.75rem;
+  }
+
+  .labelBefore {
+    left: var(--space-3);
+  }
+
+  .labelAfter {
+    right: var(--space-3);
+  }
+}

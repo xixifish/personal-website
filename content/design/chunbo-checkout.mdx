@@ -1,0 +1,92 @@
+import checkoutAfter from "@/public/design/chunbo-checkout/checkout-02-after.png";
+import checkoutBefore from "@/public/design/chunbo-checkout/checkout-01-before.png";
+import deliveryTime from "@/public/design/chunbo-checkout/checkout-03-delivery-time.png";
+import orders from "@/public/design/chunbo-checkout/checkout-05-orders.png";
+import desktopCheckout from "@/public/design/chunbo-checkout/checkout-06-desktop-checkout.png";
+import desktopOrderHistory from "@/public/design/chunbo-checkout/checkout-07-desktop-order-history.png";
+
+import { BeforeAfter } from "@/components/BeforeAfter";
+import Image from "next/image";
+
+One order, several packages. I redesigned Chunbo’s checkout so customers knew their order would arrive in parts and wouldn’t think items were missing. The new layout raised checkout completion by about 10%.
+
+<BeforeAfter
+  before={checkoutBefore}
+  after={checkoutAfter}
+  beforeAlt="Old checkout: one long list of items with a single total, no delivery times."
+  afterAlt="Redesigned checkout: items grouped into Package 1 and Package 2, each with its own delivery date and time."
+/>
+
+## Problem
+
+To deliver groceries faster and fresher, Chunbo opened warehouses in more places. One order could now arrive as several packages, at different times.
+
+Customer service saw the risk first. Customers wouldn’t expect a split order, and when only part of it arrived, they’d think items were missing. This became the main problem to solve.
+
+### Why not one delivery?
+
+The simplest fix was to keep everything together and deliver once. I asked the delivery team, and it wasn’t possible. The warehouses couldn’t hold orders back, and frozen food and fresh seafood can’t wait for the rest of an order. So the split had to stay, and the design had to explain it.
+
+<figure>
+  <Image
+    src={deliveryTime}
+    alt="Delivery time screen: Package 1 (sea bass and salmon) booked for Friday morning, Package 2 (fruit, vegetables and pantry items) for Monday afternoon."
+    sizes="(max-width: 700px) 100vw, 650px"
+  />
+  <figcaption>
+    Fresh fish arrives Friday morning. Everything else follows from another
+    warehouse on Monday.
+  </figcaption>
+</figure>
+
+## What I did
+
+I was the only designer on the project, from research to launch.
+
+- **Workshop.** I brought together the warehouse, delivery and customer service teams to understand how orders would split and where customers would get confused.
+- **Survey.** With customer service, I asked customers what they check before paying. The top five: address, delivery time, total, items, discount.
+- **Design.** I grouped the checkout by package. Each package shows its own items and delivery slot, and all slots can be set on one screen. The page follows the survey order, so what people check most comes first. Packages carry through to order history and order details, each with its own status and tracking.
+- **A/B test, one change at a time.** Two things were changing at once: the new layout and split deliveries. To see what the layout did on its own, I tested it first, with every order still delivered in one go. Over two weeks, customers were randomly split into two groups, and the new layout raised checkout completion by about 10%. Then we launched it on all platforms with split deliveries.
+
+## Result
+
+- Checkout completion up about 10% in a two-week A/B test.
+- Launched on all platforms with no complaints about missing items.
+
+## More screens
+
+<figure>
+  <Image
+    src={orders}
+    alt="Two screens. Order history: one order split into Package 1, processing, and Package 2, shipped. Order details: a note explains the order comes from different warehouses, then lists each package with its own status and delivery time."
+    sizes="(max-width: 700px) 100vw, 650px"
+  />
+  <figcaption>
+    After checkout, packages carry through to order history and order details,
+    each with its own status and tracking.
+  </figcaption>
+</figure>
+
+<figure>
+  <Image
+    src={desktopCheckout}
+    alt="Desktop checkout: saved addresses as cards, a note that the order arrives in 2 packages from different warehouses, Package 1 and Package 2 each with its own delivery time and the Change Time pop-up open, then discounts and a summary listing both delivery times."
+    sizes="(max-width: 700px) 100vw, 650px"
+  />
+  <figcaption>
+    The same design on desktop. Delivery times change in a pop-up, and the
+    summary repeats both times before paying.
+  </figcaption>
+</figure>
+
+<figure>
+  <Image
+    src={desktopOrderHistory}
+    alt="Desktop order history: the newest order is marked Split into 2 packages, with Package 1 processing and Package 2 shipped with a Track link. Older single-delivery orders show one status each."
+    sizes="(max-width: 700px) 100vw, 650px"
+  />
+  <figcaption>
+    A split order says so at the top, and each package keeps its own status and
+    tracking. Orders delivered in one go look the same as before.
+  </figcaption>
+</figure>

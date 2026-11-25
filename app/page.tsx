@@ -1,12 +1,13 @@
 import styles from "./page.module.css";
 import { PROJECTS } from "@/data/projects";
 import { ProjectCard } from "@/components/ProjectCard";
-import { DESIGNCASES } from "@/data/designCases";
+import { DESIGNCASES, WRITTEN_CASES } from "@/data/designCases";
 import { LIBRARY } from "@/data/library";
 import Image from "next/image";
 import { CopyEmail } from "@/components/CopyEmail";
 
 import { EMAIL } from "@/data/contact";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -88,7 +89,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section className={styles.section}>
+        <section id="design" className={styles.section}>
           <h2>Design</h2>
           <p className={styles.sectionIntro}>
             I aim to deliver simple, elegant solutions that address real user
@@ -97,7 +98,15 @@ export default function Home() {
           <ul className={styles.designList}>
             {DESIGNCASES.map((designCase) => (
               <li key={designCase.title} className={styles.designRow}>
-                <span>{designCase.title}</span>
+                <span>
+                  {WRITTEN_CASES.includes(designCase.slug) ? (
+                    <Link href={`/design/${designCase.slug}`}>
+                      {designCase.title}
+                    </Link>
+                  ) : (
+                    designCase.title
+                  )}
+                </span>
                 <span>{designCase.client}</span>
                 <span>{designCase.result}</span>
               </li>

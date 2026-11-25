@@ -1,12 +1,14 @@
 import checkoutAfter from "@/public/design/chunbo-checkout/checkout-02-after.png";
-import Image from "next/image";
+import checkoutBefore from "@/public/design/chunbo-checkout/checkout-01-before.png";
+import { BeforeAfter } from "@/components/BeforeAfter";
 
 One order, several packages. I redesigned Chunbo’s checkout so customers knew their order would arrive in parts and wouldn’t think items were missing. The new layout raised checkout completion by about 10%.
 
-<Image
-  src={checkoutAfter}
-  alt="Redesigned checkout: items grouped into Package 1 and Package 2, each with its own delivery date and time."
-  sizes="(max-width: 700px) 100vw, 650px"
+<BeforeAfter
+  before={checkoutBefore}
+  after={checkoutAfter}
+  beforeAlt="Old checkout: one long list of items with a single total, no delivery times."
+  afterAlt="Redesigned checkout: items grouped into Package 1 and Package 2, each with its own delivery date and time."
 />
 
 ## Problem

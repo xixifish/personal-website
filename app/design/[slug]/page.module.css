@@ -82,7 +82,7 @@
   scroll-margin-top: var(--space-8);
 }
 
-.body img {
+.body > img {
   display: block;
   width: 100%;
   height: auto;

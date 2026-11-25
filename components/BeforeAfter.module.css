@@ -29,6 +29,7 @@
   translate: -50% 0; /* centre the line on the cut */
   pointer-events: none; /* drags go through to the input below */
   box-shadow: 0 1px 4px rgb(0 0 0 / 0.15);
+  border-radius: 1px;
 }
 
 .range {

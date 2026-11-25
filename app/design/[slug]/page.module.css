@@ -82,12 +82,25 @@
   scroll-margin-top: var(--space-8);
 }
 
-.body > img {
+/* Gap above an image, or above an image with a caption */
+.body > img,
+.body > figure {
+  margin-top: var(--space-8);
+}
+
+/* Images fill the column */
+.body > img,
+.body figure img {
   display: block;
   width: 100%;
   height: auto;
-  margin-top: var(--space-8);
   border-radius: 4px;
+}
+
+/* Small grey line under an image */
+.body figcaption {
+  margin-top: var(--space-2);
+  font-size: var(--text-small);
 }
 
 .menu {

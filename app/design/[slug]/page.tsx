@@ -1,13 +1,9 @@
-import { DESIGNCASES } from "@/data/designCases";
+import { DESIGNCASES, WRITTEN_CASES } from "@/data/designCases";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "./page.module.css";
 import { CaseMenu } from "@/components/CaseMenu";
-
-// Cases that have an article in content/design/<slug>.mdx.
-// Add a slug here when its MDX file is written.
-const WRITTEN_CASES = ["chunbo-checkout"];
 
 // Build one page per written case. Any other slug gives a 404.
 export function generateStaticParams() {

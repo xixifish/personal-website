@@ -1,27 +1,40 @@
 import { Resend } from "resend";
 import { EMAIL } from "@/data/contact";
 
+type ContactInput = { email: string; message: string; website: string };
+
+function parseContact(body: unknown): ContactInput | null {
+  if (
+    typeof body === "object" &&
+    body !== null &&
+    "email" in body &&
+    typeof body.email === "string" &&
+    "message" in body &&
+    typeof body.message === "string" &&
+    "website" in body &&
+    typeof body.website === "string"
+  ) {
+    return { email: body.email, message: body.message, website: body.website };
+  }
+
+  return null;
+}
+
 export async function POST(request: Request) {
-  let body;
+  let body: unknown;
   try {
     body = await request.json();
   } catch {
     return Response.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  if (typeof body !== "object" || body === null) {
+  const contactInput = parseContact(body);
+
+  if (contactInput === null) {
     return Response.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  const { email, message, website } = body;
-
-  if (
-    typeof email !== "string" ||
-    typeof message !== "string" ||
-    typeof website !== "string"
-  ) {
-    return Response.json({ error: "Invalid request" }, { status: 400 });
-  }
+  const { email, message, website } = contactInput;
 
   // Honeypot: a bot filled the hidden field. Pretend it worked, send nothing.
   if (website !== "") {

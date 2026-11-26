@@ -29,6 +29,25 @@
   padding-bottom: var(--space-3);
 }
 
+.stack {
+  display: flex;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin-block: var(--space-1) var(--space-4);
+  flex-wrap: wrap;
+}
+
+.tech {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  line-height: 2;
+  background-color: var(--color-line);
+  border-radius: 999px;
+  padding-inline: var(--space-2);
+  white-space: nowrap;
+}
+
 .tagline {
   color: var(--color-muted);
 }

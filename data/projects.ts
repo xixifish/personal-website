@@ -5,6 +5,7 @@ export type Project = {
   githubUrl: string;
   figmaUrl: string;
   cover: { src: string; alt: string };
+  stack: string[];
 };
 
 export const PROJECTS: Project[] = [
@@ -20,6 +21,7 @@ export const PROJECTS: Project[] = [
       src: "/covers/cover-1.png",
       alt: "Open Weekly Planner",
     },
+    stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Better Auth"],
   },
   {
     name: "Popcorn",
@@ -33,5 +35,6 @@ export const PROJECTS: Project[] = [
       src: "/covers/cover-2.png",
       alt: "Open Popcorn Movie Recommender",
     },
+    stack: ["React", "Vite", "Transformers.js", "TMDB API"],
   },
 ];

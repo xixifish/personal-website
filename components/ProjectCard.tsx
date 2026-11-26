@@ -16,6 +16,13 @@ export function ProjectCard({ project }: { project: Project }) {
         />
       </a>
       <h3 className={styles.name}>{project.name}</h3>
+      <ul className={styles.stack}>
+        {project.stack.map((tech) => (
+          <li key={tech} className={styles.tech}>
+            {tech}
+          </li>
+        ))}
+      </ul>
       <p className={styles.tagline}>{project.tagline}</p>
       <ul className={styles.links}>
         <li>
